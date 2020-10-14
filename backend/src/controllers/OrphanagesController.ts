@@ -35,6 +35,7 @@ export default {
       return { path: image.filename };
     });
 
+
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       latitude: Yup.number().required(),
@@ -49,6 +50,8 @@ export default {
         })
       ),
     });
+
+   
 
     await schema.validate(
       { ...req.body, images },
